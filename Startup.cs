@@ -55,8 +55,8 @@ namespace Shop
                 };
             });
 
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
-            //services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
             //AddScoped mantem a instancia por requisicao; AddTransient => sempre retorna uma instancia nova; AddSingleton => mantem uma unica instancia durante todo funcionamento da aplicação
 
             services.AddSwaggerGen(c =>
